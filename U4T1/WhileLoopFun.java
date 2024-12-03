@@ -12,13 +12,13 @@ public class WhileLoopFun {
               Example:  If number is 150856, this methods prints 6, then 5, then 8, then 0, then 5, then 1 (on separate
                                 lines)
          */
-    public void printDigits(int number) {
-          while (number != 0) {
-               System.out.println(number % 10);
-               number /= 10;
-          }
-    }
-  
+     public void printDigits(int number) {
+               while (number != 0) {
+                    System.out.println(number % 10);
+                    number /= 10;
+               }
+     }
+     
     /** Returns the number of times letter occurs in word.
                 Example:  If word is "apple" and letter is "p",  this methods returns 2
                 Example:  If word is "excellente" and letter is "e",  this methods returns 4
@@ -27,21 +27,21 @@ public class WhileLoopFun {
                 Note!  This could arguably be done easier with a for loop, so if you already know how to use for loops,
                 try it this time using a while loop.
          */
-    public int countLetter(String word, String letter) {
-     int i = 0;
-     int numLetters = 0;
-     if (word.contains(letter)) {
-          
-          while (i < word.length()) {
-               String nextLetter = word.substring(i, i + 1);
-               if (nextLetter.equals(letter)) {
-                    numLetters++;
+     public int countLetter(String word, String letter) {
+          int i = 0;
+          int numLetters = 0;
+          if (word.contains(letter)) {
+               
+               while (i < word.length()) {
+                    String nextLetter = word.substring(i, i + 1);
+                    if (nextLetter.equals(letter)) {
+                         numLetters++;
+                    }
+                    i++;
                }
-               i++;
           }
+          return numLetters;
      }
-     return numLetters;
-    }
   
   /**Returns the maximum number of times that number can be doubled before it exceeds threshold
               Example:  If number is 4 and threshold is 20, return 2, since 4 can be doubled a maximum of two 
@@ -65,16 +65,16 @@ public class WhileLoopFun {
              Precondition: number > 0, threshold > 0
        */
     public int maxDoubles(int number, int threshold) {
-     int numDoubles = 0;
-     while (number <= threshold) {
-          number *= 2;
-          if (number <= threshold) {
-               numDoubles++;
+          int numDoubles = 0;
+          while (number <= threshold) {
+               number *= 2;
+               if (number <= threshold) {
+                    numDoubles++;
+               }
           }
+          return numDoubles;
      }
-     return numDoubles;
-    }
-  
+     
     /**Returns true if number is prime (i.e. it has exactly two divisors: 1 and itself) and false
               if it is not prime (i.e. it has at least one other divisor); however, if number is 1, return false, as 1 is
               actually considered non-prime*
